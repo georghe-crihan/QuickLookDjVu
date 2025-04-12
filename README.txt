@@ -1,6 +1,8 @@
 Checked out from upstream/3.5.25.3 of DjvuLibre djvulibre/macosx/QuickLookDjVu/
 Version 1.1.
 
+The QuickLook plugin uses bin/ddjvu binary to render the pages.
+
 djvu.qlgenerator
 
 QuickLook generator for DjVu documents.
