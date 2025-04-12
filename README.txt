@@ -1,3 +1,6 @@
+Checked out from upstream/3.5.25.3 of DjvuLibre djvulibre/macosx/QuickLookDjVu/
+Version 1.1.
+
 djvu.qlgenerator
 
 QuickLook generator for DjVu documents.
