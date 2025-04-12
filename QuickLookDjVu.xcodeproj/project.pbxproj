@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 44;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -195,9 +195,17 @@
 /* Begin PBXProject section */
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 2CA326220896AD4900168862 /* Build configuration list for PBXProject "QuickLookDjVu" */;
-			compatibilityVersion = "Xcode 3.0";
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+				Base,
+				English,
+			);
 			mainGroup = 089C166AFE841209C02AAC07 /* QuickLookDjVu */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -300,8 +308,9 @@
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Apps/Utilities/DjView.app/Contents/lib\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_NAME = djvu;
-				VALID_ARCHS = "i386 ppc";
+				VALID_ARCHS = "arm64  x86_64";
 				WRAPPER_EXTENSION = qlgenerator;
 				ZERO_LINK = YES;
 			};
@@ -320,8 +329,9 @@
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Apps/Utilities/DjView.app/Contents/lib\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_NAME = djvu;
-				VALID_ARCHS = "i386 ppc";
+				VALID_ARCHS = "arm64 x86_64";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Release;
@@ -332,21 +342,18 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				PRODUCT_BUNDLE_IDENTIFIER = org.djvu.qlgenerator;
 			};
 			name = Debug;
 		};
 		2CA326240896AD4900168862 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+				PRODUCT_BUNDLE_IDENTIFIER = org.djvu.qlgenerator;
 			};
 			name = Release;
 		};
