@@ -60,7 +60,7 @@ GeneratePreviewForURL(void *thisInterface,
 			NSString *source = (NSString *)CFURLCopyFileSystemPath(url, kCFURLPOSIXPathStyle);
 			NSString *dest = nil;
 			NSFileManager *fmgr = [NSFileManager defaultManager];
-			[fmgr createDirectoryAtPath:tmpPath attributes:nil];
+            [fmgr createDirectoryAtPath:tmpPath withIntermediateDirectories:NO attributes:nil error:nil];
 			
 			mditem = MDItemCreate(kCFAllocatorDefault, (CFStringRef)source);
 			if (mditem) {
@@ -115,7 +115,8 @@ GeneratePreviewForURL(void *thisInterface,
 							imageRef = CGImageSourceCreateImageAtIndex(sourceRef, 0, NULL);
 							if (imageRef) {
 								CGFloat offset = height * (page-1);
-								CGRectOffset(rect, 0.0, offset);
+                                // FIXME: return ignored!
+								(void)CGRectOffset(rect, 0.0, offset);
 								CGPDFContextBeginPage(c, NULL);
 								CGContextSaveGState(c);
 								CGContextDrawImage(c, rect, imageRef);
@@ -125,7 +126,8 @@ GeneratePreviewForURL(void *thisInterface,
 									CGPDFDocumentRef doc = CGPDFDocumentCreateWithURL(more);
 									CGPDFPageRef pdf = CGPDFDocumentGetPage(doc, 1);
 									CGFloat offset = height * page;
-									CGRectOffset(rect, 0.0, offset);
+                                    // FIXME: return ignored!
+									(void)CGRectOffset(rect, 0.0, offset);
 									CGContextSaveGState(c);
 									m = CGPDFPageGetDrawingTransform(pdf, kCGPDFMediaBox, rect, 0, true);
 									CGContextConcatCTM(c, m);
@@ -147,7 +149,8 @@ GeneratePreviewForURL(void *thisInterface,
 			CGPDFContextClose(c);
 			QLPreviewRequestFlushContext(preview, c);
 			CFRelease(c);
-			[fmgr removeFileAtPath:tmpPath handler:nil];
+            NSURL *destinationURL = [[NSURL alloc]initWithString:tmpPath];
+            [fmgr removeItemAtURL:destinationURL error:nil];
 			[source release];
 		}
 	poppool:

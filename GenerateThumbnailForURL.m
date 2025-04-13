@@ -3,6 +3,7 @@
 #include <QuickLook/QuickLook.h>
 #import <Cocoa/Cocoa.h>
 #include <ApplicationServices/ApplicationServices.h>
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
 #include "ddjvuRef.h"
 
@@ -38,9 +39,10 @@ GenerateThumbnailForURL(void *thisInterface,
 		{
 			if (debug)
 				NSLog(@"skip thumbnail for %@", url);
-			CFStringRef ext = CFURLCopyPathExtension(url);
+            CFStringRef ext = CFURLCopyPathExtension(url);
 			if (ext) {
-				NSImage *img = [[NSWorkspace sharedWorkspace] iconForFileType:(NSString*)ext];
+                // FIXME: UTType for ext? Needs pondering.
+                NSImage *img = [[NSWorkspace sharedWorkspace] iconForContentType:[UTType typeWithIdentifier:(NSString *)ext]];
 				if (img) {
 					NSData *data = [img TIFFRepresentation];
 					QLThumbnailRequestSetImageWithData(thumbnail, (CFDataRef)data, NULL);
@@ -70,7 +72,7 @@ GenerateThumbnailForURL(void *thisInterface,
 				int page = 1;
 				NSString *source = (NSString *)CFURLCopyFileSystemPath(url, kCFURLPOSIXPathStyle);
 				NSString *dest = [tmpPath stringByAppendingPathComponent:[[source lastPathComponent] stringByAppendingFormat:@"_t_p%d.tiff", page]];
-				[fmgr createDirectoryAtPath:tmpPath attributes:nil];			
+                [fmgr createDirectoryAtPath:tmpPath withIntermediateDirectories:NO attributes:nil error:nil];
 				cmdRef = CFStringCreateWithFormat(NULL, NULL, CFSTR("\"%s\" -format=tiff -page=%d -size=%dx%d \"%s\" \"%s\""), ddjvu, page, (int)maxSize.width, (int)maxSize.height, [source fileSystemRepresentation], [dest fileSystemRepresentation]);
 				cmd = CFStringGetCStringPtr(cmdRef, CFStringGetSystemEncoding());
 				if (cmd != NULL) {
@@ -90,7 +92,8 @@ GenerateThumbnailForURL(void *thisInterface,
 						}
 					}
 				}
-				[fmgr removeFileAtPath:tmpPath handler:nil];
+                NSURL *destinationURL = [[NSURL alloc]initWithString:tmpPath];
+                [fmgr removeItemAtURL:destinationURL error:nil];
 				CFRelease(cmdRef);
 				[source release];
 			}

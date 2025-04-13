@@ -38,13 +38,20 @@ ddjvuURL(CFBundleRef bundle)
 		CFBundleRef djviewBundle = NULL;
 		djviewBundle = CFBundleGetBundleWithIdentifier(CFSTR("org.djvu.DjView"));
 		if (djviewBundle == NULL) {
-			OSStatus stat;
-			FSRef djviewPath;
+            // FIXME: check if we need this at all.
+			//FSRef djviewPath;
 			CFURLRef refURL;
-			stat = LSFindApplicationForInfo(kLSUnknownCreator, CFSTR("org.djvu.DjView"), NULL, &djviewPath, &refURL);
-			if (stat == noErr) {
-				djviewBundle = CFBundleCreate(kCFAllocatorDefault, refURL);
-			}
+            CFArrayRef urls = LSCopyApplicationURLsForBundleIdentifier (CFSTR("org.djvu.DjView"), NULL);
+            if (urls)
+               {
+                 /* TODO: if there's multiple, we should perhaps prefer one thats in $HOME,
+                  * instead of just always picking the first.
+                  */
+                   refURL = CFArrayGetValueAtIndex (urls, 0);
+                   CFRetain (refURL);
+                   CFRelease (urls);
+               }
+            djviewBundle = CFBundleCreate(kCFAllocatorDefault, refURL);
 		}
 		
 		if (djviewBundle != NULL) {
