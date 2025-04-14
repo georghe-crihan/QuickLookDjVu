@@ -24,49 +24,49 @@ The plugin should be registered with *lsregister*. Either by calling `lsregister
 the parent app.
 ```
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister \
--dump | grep blender-thumbnailer
+-dump | grep djvu-thumbnailer
 ``` 
  
 # Debugging
 Since read-only entitlement is there, creating files to log is not possible. So `NSLog` and
 viewing it in `Console.app` (after triggering a thumbnail) is the way to go. Interesting processes
-are: `qlmanage`, `quicklookd`, `kernel`, `blender-thumbnailer`, `secinitd`,
+are: `qlmanage`, `quicklookd`, `kernel`, `djvu-thumbnailer`, `secinitd`,
 `com.apple.quicklook.ThumbnailsAgent`.
 
 LLDB/ Xcode etc., debuggers can be used to get extra logs than CLI invocation but breakpoints
 still are a pain point. `/usr/bin/qlmanage` is the target executable. Other args to *qlmanage*
 follow. 
 ```
-lldb qlmanage --  -t -x a.blend
+lldb qlmanage --  -t -x a.djvu
 ```
 
 # Troubleshooting
 - The appex shouldn't have any quarantine flag.
 ```
-   xattr -rl bin/Blender.app/Contents/Plugins/blender-thumbnailer.appex
+   xattr -rl bin/Djvu.app/Contents/Plugins/djvu-thumbnailer.appex
 ```
 - Is it registered with *lsregister* and there isn't a conflict with another plugin taking
   precedence?
 ```
-lsregister -dump | grep blender-thumbnailer.appex
+lsregister -dump | grep djvu-thumbnailer.appex
 ```
 - For `RBSLaunchRequest` error: is the executable flag set?
 ```
-chmod u+x bin/Blender.app/Contents/PlugIns/blender-thumbnailer.appex/Contents/MacOS/blender-thumbnailer
+chmod u+x bin/Djvu.app/Contents/PlugIns/djvu-thumbnailer.appex/Contents/MacOS/djvu-thumbnailer
 ```
 - Is it codesigned and sandboxed?
 ```
 codesign --display --verbose --entitlements - --xml \
-  bin/Blender.app/Contents/Plugins/blender-thumbnailer.appex codesign --deep --force --sign - \
-  --entitlements ../blender/release/darwin/thumbnailer_entitlements.plist --timestamp=none \
-  bin/Blender.app/Contents/Plugins/blender-thumbnailer.appex
+  bin/Djvu.app/Contents/Plugins/djvu-thumbnailer.appex codesign --deep --force --sign - \
+  --entitlements ../djvu/release/darwin/thumbnailer_entitlements.plist --timestamp=none \
+  bin/Djvu.app/Contents/Plugins/djvu-thumbnailer.appex
 ```
-- Sometimes *blender-thumbnailer* running in background can be killed.
+- Sometimes *djvu-thumbnailer* running in background can be killed.
 - ```qlmanage -r && killall Finder```
-- The code cannot attempt to do anything outside sandbox like writing to blend.
+- The code cannot attempt to do anything outside sandbox like writing to djvu.
 
 # Triggering a thumbnail
-- ```qlmanage -t -x /path/to/file.blend```
+- ```qlmanage -t -x /path/to/file.djvu```
 
 # External resources
 https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/Quicklook_Programming_Guide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40005020-CH1-SW1
