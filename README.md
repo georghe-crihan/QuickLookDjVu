@@ -1,6 +1,10 @@
-Many thanks to:
-- GitHub / blender / blender / source/blender/blendthumb/src/thumbnail_provider.mm (see [technical details](tech_details.md)). 
+# DjVu thumbnail plugin
+- That is not a Quick Look generator.
+- That is a Thumbnailer
+- That aims to be Sequoia (OSX 10.15) compatible.
 
+
+Many thanks to GitHub / blender / blender / source/blender/blendthumb/src/thumbnail_provider.mm (see [technical details](tech_details.md)) 
 for code inspiration.
 
 Original checked out from upstream/3.5.25.3 of DjvuLibre djvulibre/macosx/QuickLookDjVu/

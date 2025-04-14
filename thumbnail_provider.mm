@@ -1,6 +1,7 @@
 /* SPDX-FileCopyrightText: 2025 Blender Authors
  *
- * SPDX-License-Identifier: GPL-2.0-or-later */
+ * SPDX-License-Identifier: GPL-2.0-or-later 
+ * Many thanks to GitHub / blender / blender / source/blender/blendthumb/src/thumbnail_provider.mm */
 
 #import <AppKit/NSImage.h>
 #include <unistd.h>
