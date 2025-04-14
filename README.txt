@@ -2,6 +2,7 @@ Many thanks to:
 - OmniGroup for OmniGroup / Frameworks / OmniAppKit / OpenStepExtensions
 - iridium-browser / chrome / icon_loader_mac
 - GitHub / Marginal / QLVideo
+- GitHub / popbones / mac.bundlr - in particular, for the new QuickLook Preview Extension & Thumbnail Extension API examples
 
 Support for deprecated Quick Look Generator plugins is being removed. To provide previews and thumbnails for your custom file types,
 migrate to Quick Look Preview Extension and Thumbnail Extension API. (116791365)
