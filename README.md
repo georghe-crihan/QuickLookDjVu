@@ -1,5 +1,5 @@
 Many thanks to:
-- GitHub / blender / blender / source/blender/blendthumb/src/thumbnail_provider.mm (see [./tech_details.md](technical details)). 
+- GitHub / blender / blender / source/blender/blendthumb/src/thumbnail_provider.mm (see [technical details](tech_details.md)). 
 
 for code inspiration.
 
