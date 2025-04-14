@@ -42,7 +42,7 @@ GenerateThumbnailForURL(void *thisInterface,
             CFStringRef ext = CFURLCopyPathExtension(url);
 			if (ext) {
                 // FIXME: UTType for ext? Needs pondering.
-                NSImage *img = [[NSWorkspace sharedWorkspace] iconForContentType:[UTType typeWithIdentifier:(NSString *)ext]];
+                NSImage *img = [[NSWorkspace sharedWorkspace] iconForContentType:[UTType typeWithFilenameExtension:(NSString *)ext]];
 				if (img) {
 					NSData *data = [img TIFFRepresentation];
 					QLThumbnailRequestSetImageWithData(thumbnail, (CFDataRef)data, NULL);
