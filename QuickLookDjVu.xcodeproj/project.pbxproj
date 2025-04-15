@@ -22,6 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		04B472F32DADD56300134CB1 /* thumbnail_provider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04B472F22DADD56300134CB1 /* thumbnail_provider.mm */; };
+		04B472F42DADD56300134CB1 /* thumbnail_provider.h in Headers */ = {isa = PBXBuildFile; fileRef = 04B472F12DADD56300134CB1 /* thumbnail_provider.h */; };
 		04FFE98C2DAB4D5E00F8CC4E /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FFE98B2DAB4D5E00F8CC4E /* UniformTypeIdentifiers.framework */; };
 		2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */; };
 		41B575C70D0DAD2B0021A107 /* more_pages.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 41B575C60D0DAD2B0021A107 /* more_pages.pdf */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		041968D52DAAE877007F6A0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04B472F12DADD56300134CB1 /* thumbnail_provider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = thumbnail_provider.h; sourceTree = "<group>"; };
+		04B472F22DADD56300134CB1 /* thumbnail_provider.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = thumbnail_provider.mm; sourceTree = "<group>"; };
 		04FFE98B2DAB4D5E00F8CC4E /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = /System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = "<absolute>"; };
 		08FB77B6FE84183AC02AAC07 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
@@ -126,6 +130,8 @@
 		08FB77AFFE84173DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				04B472F12DADD56300134CB1 /* thumbnail_provider.h */,
+				04B472F22DADD56300134CB1 /* thumbnail_provider.mm */,
 				61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */,
 				2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */,
 				08FB77B6FE84183AC02AAC07 /* main.c */,
@@ -168,6 +174,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B472F42DADD56300134CB1 /* thumbnail_provider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +265,7 @@
 			files = (
 				8D576312048677EA00EA77CD /* main.c in Sources */,
 				2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */,
+				04B472F32DADD56300134CB1 /* thumbnail_provider.mm in Sources */,
 				61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.m in Sources */,
 				41BC78F60CFBEC4100887A1D /* ddjvuRef.c in Sources */,
 			);
@@ -341,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -363,6 +372,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -380,6 +390,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -401,6 +412,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

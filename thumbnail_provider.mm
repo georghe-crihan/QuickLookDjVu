@@ -4,6 +4,8 @@
  * Many thanks to GitHub / blender / blender / source/blender/blendthumb/src/thumbnail_provider.mm */
 
 #import <AppKit/NSImage.h>
+#include <optional>
+#include <vector>
 #include <unistd.h>
 #include <fcntl.h>
 
@@ -16,7 +18,7 @@ class FileDescriptorRAII {
  public:
   explicit FileDescriptorRAII(const char *file_path)
   {
-    src_fd = open(file_path, O_BINARY | O_RDONLY, 0);
+    src_fd = open(file_path, O_RDONLY, 0);
   }
 
   ~FileDescriptorRAII()
@@ -71,7 +73,7 @@ static NSImage *generate_nsimage_for_file(const char *src_djvu_path, NSError *er
     return nil;
   }
 
-  std::optional<std::Vector<uint8_t>> png_buf_opt = djvuthumb_create_png_data_from_thumb(
+  std::optional<std::vector<uint8_t>> png_buf_opt = djvuthumb_create_png_data_from_thumb(
       &thumb);
   if (!png_buf_opt) {
     error = create_nserror_from_string(@"Failed to create png data from thumbnail");
