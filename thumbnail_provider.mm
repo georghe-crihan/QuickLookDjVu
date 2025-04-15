@@ -59,30 +59,30 @@ static NSImage *generate_nsimage_for_file(const char *src_djvu_path, NSError *er
     return nil;
   }
 
-  FileReader *file_content = BLI_filereader_new_file(src_file_fd.get());
-  if (file_content == nullptr) {
-    error = create_nserror_from_string(@"Failed to read from djvu");
-    return nil;
-  }
+//  FileReader *file_content = BLI_filereader_new_file(src_file_fd.get());
+//  if (file_content == nullptr) {
+//    error = create_nserror_from_string(@"Failed to read from djvu");
+//    return nil;
+//  }
 
   /* Extract thumbnail from file. */
-  Thumbnail thumb;
-  eThumbStatus err = djvuthumb_create_thumb_from_file(file_content, &thumb);
-  if (err != BT_OK) {
-    error = create_nserror_from_string(@"Failed to create thumbnail from file");
-    return nil;
-  }
+  //Thumbnail thumb;
+  //eThumbStatus err = djvuthumb_create_thumb_from_file(file_content, &thumb);
+  //if (err != BT_OK) {
+  //  error = create_nserror_from_string(@"Failed to create thumbnail from file");
+  //  return nil;
+  //}
 
-  std::optional<std::vector<uint8_t>> png_buf_opt = djvuthumb_create_png_data_from_thumb(
-      &thumb);
-  if (!png_buf_opt) {
+  //std::optional<std::vector<uint8_t>> png_buf_opt = djvuthumb_create_png_data_from_thumb(
+  //    &thumb);
+  //if (!png_buf_opt) {
     error = create_nserror_from_string(@"Failed to create png data from thumbnail");
     return nil;
-  }
+  //}
 
-  NSData *ns_data = [NSData dataWithBytes:png_buf_opt->data() length:png_buf_opt->size()];
-  NSImage *ns_image = [[NSImage alloc] initWithData:ns_data];
-  return ns_image;
+  //NSData *ns_data = [NSData dataWithBytes:png_buf_opt->data() length:png_buf_opt->size()];
+  //NSImage *ns_image = [[NSImage alloc] initWithData:ns_data];
+  //return ns_image;
 }
 
 @implementation ThumbnailProvider

@@ -1,6 +1,8 @@
 # DjVu thumbnail plugin
-- That is not a Quick Look generator.
-- That is a Thumbnailer
+- That is NOT a Quick Look generator.
+- That is a Thumbnailer.
+- That is implemented in Objective C.
+- That is NOT implemented in Swift.
 - That aims to be Sequoia (OSX 10.15) compatible.
 
 

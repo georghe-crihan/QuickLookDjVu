@@ -1,3 +1,4 @@
+#if 0
 #include <CoreFoundation/CoreFoundation.h>
 #include <CoreServices/CoreServices.h>
 #include <QuickLook/QuickLook.h>
@@ -107,3 +108,4 @@ void CancelThumbnailGeneration(void* thisInterface, QLThumbnailRequestRef thumbn
 {
     // implement only if supported
 }
+#endif
