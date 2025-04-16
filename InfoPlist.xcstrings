@@ -1,0 +1,29 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleGetInfoString" : {
+      "comment" : "Localized versions of Info.plist keys",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "version 1.1, Copyright (c) 2007, 2009 Corpus Callosum Corporation"
+          }
+        }
+      }
+    },
+    "NSHumanReadableCopyright" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright (c) 2007, 2009 Corpus Callosum Corporation"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
