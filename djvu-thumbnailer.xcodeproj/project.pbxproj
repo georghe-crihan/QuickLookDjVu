@@ -67,7 +67,7 @@
 		41BC78F40CFBEC4100887A1D /* ddjvuRef.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ddjvuRef.c; sourceTree = "<group>"; };
 		41BC7ABB0CFE435800887A1D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
-		8D576316048677EA00EA77CD /* djvu.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = djvu.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D576316048677EA00EA77CD /* djvu-thumbnailer.appex */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = djvu-thumbnailer.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C86B05260671AA6E00DD9006 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		F28CFBFC0A3EC0AF000ABFF5 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -90,7 +90,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		089C166AFE841209C02AAC07 /* QuickLookDjVu */ = {
+		089C166AFE841209C02AAC07 /* DjVuThumbnailer */ = {
 			isa = PBXGroup;
 			children = (
 				414B4D7B0F6D9803003645A9 /* config */,
@@ -100,7 +100,7 @@
 				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
 				19C28FB6FE9D52B211CA2CBB /* Products */,
 			);
-			name = QuickLookDjVu;
+			name = DjVuThumbnailer;
 			sourceTree = "<group>";
 		};
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
@@ -144,7 +144,7 @@
 		19C28FB6FE9D52B211CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D576316048677EA00EA77CD /* djvu.appex */,
+				8D576316048677EA00EA77CD /* djvu-thumbnailer.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,8 +196,8 @@
 			);
 			name = djvu;
 			productInstallPath = /Library/QuickLook;
-			productName = QuickLookDjVu;
-			productReference = 8D576316048677EA00EA77CD /* djvu.appex */;
+			productName = DjVuThumbnailer;
+			productReference = 8D576316048677EA00EA77CD /* djvu-thumbnailer.appex */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +217,7 @@
 				en,
 				Base,
 			);
-			mainGroup = 089C166AFE841209C02AAC07 /* QuickLookDjVu */;
+			mainGroup = 089C166AFE841209C02AAC07 /* DjVuThumbnailer */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -250,11 +250,11 @@
 				"$(SRCROOT)/README.txt",
 			);
 			outputPaths = (
-				"$(SYMROOT)/QuickLookDjVu_$(THUMBNAILER_VERSION).dmg",
+				"$(SYMROOT)/DjVuThumbnailer_$(THUMBNAILER_VERSION).dmg",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION != \"Release\" ]; then\n\texit\nfi\n\n/usr/local/bin/buildDMG.pl -dmgName QuickLookDjVu_$THUMBDNAILER_VERSION.dmg \\\n\t-buildDir $SYMROOT \\\n\t-volName QuickLookDjVu_$THUMBNAILER_VERSION \\\n\t-compressionLevel 9 \\\n\t$SYMROOT/$CONFIGURATION/djvu-thumbnailer.appex \\\n\t$SRCROOT/README.txt \\\n\nhdiutil detach /Volumes/QuickLookDjVu_$THUMBNAILER_VERSION\nhdiutil resize -size min $SYMROOT/QuickLookDjVu_$THUMBNAILER_VERSION.dmg\n\nexit 0\n";
+			shellScript = "if [ $CONFIGURATION != \"Release\" ]; then\n\texit\nfi\n\n/usr/local/bin/buildDMG.pl -dmgName DjVuThumbnailer_$THUMBDNAILER_VERSION.dmg \\\n\t-buildDir $SYMROOT \\\n\t-volName DjVuThumbnailer_$THUMBNAILER_VERSION \\\n\t-compressionLevel 9 \\\n\t$SYMROOT/$CONFIGURATION/djvu-thumbnailer.appex \\\n\t$SRCROOT/README.txt \\\n\nhdiutil detach /Volumes/DjVuThumbnailer_$THUMBNAILER_VERSION\nhdiutil resize -size min $SYMROOT/DjVuThumbnailer_$THUMBNAILER_VERSION.dmg\n\nexit 0\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
