@@ -55,6 +55,7 @@ lsregister -dump | grep djvu-thumbnailer.appex
 chmod u+x bin/Djvu.app/Contents/PlugIns/djvu-thumbnailer.appex/Contents/MacOS/djvu-thumbnailer
 ```
 - Is it codesigned and sandboxed?
+
 Check:
 ```
 codesign --display --verbose --entitlements - --xml \
