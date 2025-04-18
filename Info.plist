@@ -35,7 +35,9 @@
 				<key>QLSupportedContentTypes</key>
 				<array>
 					<!-- The supported file UTIs. Not inherited from parent bundle. -->
-					<string>org.blenderfoundation.blender.file</string>
+				        <string>org.djvu.DjView</string>
+				        <string>org.djvuzone.djvulibre.djvu</string>
+				        <string>com.lizardtech.djvu</string>
 				</array>
 				<key>QLThumbnailMinimumDimension</key>
 				<integer>0</integer>

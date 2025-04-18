@@ -2,8 +2,8 @@
 qlgenerator has been deprecated and removed in platforms we support. App extensions are the way
 forward. But there's little guidance on how to do it outside Xcode.
 
->> Support for deprecated Quick Look Generator plugins is being removed. To provide previews and thumbnails for your custom file types,
->> migrate to Quick Look Preview Extension and Thumbnail Extension API. (116791365)
+> Support for deprecated Quick Look Generator plugins is being removed. To provide previews and thumbnails for your custom file types,
+> migrate to Quick Look Preview Extension and Thumbnail Extension API. (116791365)
 
 The process of thumbnail generation goes something like this:
 1. If an app is launched, or is registered with *lsregister*, its plugins also get registered.
