@@ -27,7 +27,7 @@
 		<key>CFBundleGetInfoString</key>
 		<string>${MACOSX_BUNDLE_LONG_VERSION_STRING}, djvuBlender Foundation</string>
 		<key>LSMinimumSystemVersion</key>
-		<string>10.15</string>
+		<string>15.0</string>
 		<key>NSExtension</key>
 		<dict>
 			<key>NSExtensionAttributes</key>

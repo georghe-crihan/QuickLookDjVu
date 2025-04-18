@@ -309,6 +309,7 @@
 					"\"$(SYSTEM_APPS_DIR)/DjView.app/Contents/lib\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--entitlements $(SRCROOT)/thumbnailer_entitlements.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.djvu-thumbnailer.appex";
 				PRODUCT_NAME = "djvu-thumbnailer";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -343,6 +344,7 @@
 					"\"$(SYSTEM_APPS_DIR)/DjView.app/Contents/lib\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--entitlements $(SRCROOT)/thumbnailer_entitlements.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.djvu-thumbnailer.appex";
 				PRODUCT_NAME = "djvu-thumbnailer";
 				PROVISIONING_PROFILE_SPECIFIER = "";
