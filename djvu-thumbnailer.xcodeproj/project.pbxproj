@@ -287,9 +287,17 @@
 			baseConfigurationReference = 414B4D7D0F6D9803003645A9 /* debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -303,6 +311,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.djvu-thumbnailer.appex";
 				PRODUCT_NAME = "djvu-thumbnailer";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX15.sdk";
 				VALID_ARCHS = "arm64  x86_64";
 				WRAPPER_EXTENSION = appex;
@@ -315,8 +324,16 @@
 			baseConfigurationReference = 414B4D7E0F6D9803003645A9 /* release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
@@ -328,6 +345,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.djvu-thumbnailer.appex";
 				PRODUCT_NAME = "djvu-thumbnailer";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX15.sdk";
 				VALID_ARCHS = "arm64 x86_64";
 				WRAPPER_EXTENSION = appex;
