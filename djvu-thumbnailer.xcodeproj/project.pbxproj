@@ -26,6 +26,7 @@
 		0492025A2DAF27B600B4E834 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 049202592DAF27B600B4E834 /* InfoPlist.xcstrings */; };
 		04B472F32DADD56300134CB1 /* thumbnail_provider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04B472F22DADD56300134CB1 /* thumbnail_provider.mm */; };
 		04B472F42DADD56300134CB1 /* thumbnail_provider.h in Headers */ = {isa = PBXBuildFile; fileRef = 04B472F12DADD56300134CB1 /* thumbnail_provider.h */; };
+		04C59EEE2DB312C000C33635 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04C59EED2DB312C000C33635 /* README.md */; };
 		04FFE98C2DAB4D5E00F8CC4E /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FFE98B2DAB4D5E00F8CC4E /* UniformTypeIdentifiers.framework */; };
 		2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */; };
 		41B575C70D0DAD2B0021A107 /* more_pages.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 41B575C60D0DAD2B0021A107 /* more_pages.pdf */; };
@@ -53,6 +54,7 @@
 		049202592DAF27B600B4E834 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		04B472F12DADD56300134CB1 /* thumbnail_provider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = thumbnail_provider.h; sourceTree = "<group>"; };
 		04B472F22DADD56300134CB1 /* thumbnail_provider.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = thumbnail_provider.mm; sourceTree = "<group>"; };
+		04C59EED2DB312C000C33635 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		04FFE98B2DAB4D5E00F8CC4E /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = /System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = "<absolute>"; };
 		08FB77B6FE84183AC02AAC07 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
@@ -62,7 +64,6 @@
 		414B4D7E0F6D9803003645A9 /* release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
 		41B573380D09969D0021A107 /* ddjvu */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ddjvu; sourceTree = "<group>"; };
 		41B575C60D0DAD2B0021A107 /* more_pages.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = more_pages.pdf; sourceTree = "<group>"; };
-		41B576C90D0E2AC60021A107 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		41BC78F30CFBEC4100887A1D /* ddjvuRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ddjvuRef.h; sourceTree = "<group>"; };
 		41BC78F40CFBEC4100887A1D /* ddjvuRef.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ddjvuRef.c; sourceTree = "<group>"; };
 		41BC7ABB0CFE435800887A1D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -122,7 +123,7 @@
 				41B575C60D0DAD2B0021A107 /* more_pages.pdf */,
 				8D576317048677EA00EA77CD /* Info.plist */,
 				049202592DAF27B600B4E834 /* InfoPlist.xcstrings */,
-				41B576C90D0E2AC60021A107 /* README.txt */,
+				04C59EED2DB312C000C33635 /* README.md */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -232,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C59EEE2DB312C000C33635 /* README.md in Resources */,
 				0492025A2DAF27B600B4E834 /* InfoPlist.xcstrings in Resources */,
 				41B575C70D0DAD2B0021A107 /* more_pages.pdf in Resources */,
 			);
@@ -289,7 +291,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
@@ -309,7 +311,7 @@
 					"\"$(SYSTEM_APPS_DIR)/DjView.app/Contents/lib\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--entitlements $(SRCROOT)/thumbnailer_entitlements.plist";
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--entitlements \"$(SRCROOT)/thumbnailer_entitlements.plist\";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.djvu-thumbnailer.appex";
 				PRODUCT_NAME = "djvu-thumbnailer";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -327,7 +329,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -344,7 +346,7 @@
 					"\"$(SYSTEM_APPS_DIR)/DjView.app/Contents/lib\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--entitlements $(SRCROOT)/thumbnailer_entitlements.plist";
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--entitlements \"$(SRCROOT)/thumbnailer_entitlements.plist\"";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.djvu-thumbnailer.appex";
 				PRODUCT_NAME = "djvu-thumbnailer";
 				PROVISIONING_PROFILE_SPECIFIER = "";
